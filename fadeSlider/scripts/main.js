@@ -4,12 +4,6 @@ var currentSlide = 0;
 var next = document.getElementById('next');
 var previous = document.getElementById('prev');
 
-// function nextSlide(){
-// 	slides[currentSlide].className = 'slide';
-// 	currentSlide = (currentSlide+1)%slides.length;
-// 	slides[currentSlide].className = 'slide showing';
-// };
-
 function goToSlide(n){
     slides[currentSlide].className = 'slide';
     currentSlide = (n+slides.length)%slides.length;
