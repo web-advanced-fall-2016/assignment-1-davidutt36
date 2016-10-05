@@ -1,0 +1,103 @@
+.slider{
+   position: relative;
+   flex:auto;
+   width: 100%;
+   height: 100%;
+}
+.slider .slider-controls{
+   position: absolute;
+   top:0px;
+   left: 0px;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   z-index: 680;
+}
+.slider-controls ul{
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: space-between;
+}
+.slider-controls ul li{
+   width: 10px;
+   height: 10px;
+   margin: 30px 5px;
+   background-color: rgb(213, 232, 221);
+   border-radius: 50%;
+   list-style: none;
+   cursor: pointer;
+}
+.slider-controls ul li.current{
+   background-color: rgb(10,237,143);
+}
+.slider-frame{
+   position: relative;
+   display: flex;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   background-color: rgba(228, 249, 240,0.9);
+}
+.slider-content{
+   position: relative;
+   display: flex;
+   flex-flow: row nowrap;
+   height: 100%;
+   z-index: 600;
+}
+.slider-content img{
+   position: relative;
+   margin: 0 auto;
+   width:100%;
+   height: auto;
+   flex: none;
+   object-position: 50% 50%;
+   object-fit: cover;
+}
+
+/*---------------------------------------------------*/
+
+/*.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a{
+  padding: 8px 8px 8px 30px;
+  text-decoration: none;
+  font-size: 21px;
+  color: #818181;
+  display: block;
+  transition: .3s;
+  font-family:"Playfair Display";
+  font-size: 46px;
+}
+
+.sidenav li p{
+  padding: 8px 8px 8px 50px;
+  display: block;
+  font-size: 14px;
+  font-family:"Avenir";
+  color:#818181;
+  transition:.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus {
+    color: #f1f1f1;
+}
+
+.closebtn {
+  position: absolute;;
+  top:4px;
+  right: 30px;
+  font-size: 30px!important;
+  margin-left: 50px;
+}*/
