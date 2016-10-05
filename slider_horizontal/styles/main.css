@@ -1,0 +1,58 @@
+#slideshow {
+    margin: 2em auto;
+    width: 70%;
+    max-width: 40em;
+    overflow: hidden;
+}
+
+#slideshow-wrapper {
+    width: 1600em;
+    height: 15em;
+    position: relative;
+}
+
+div.slide {
+    width: 40em;
+    height: 15em;
+    float: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#s1 {
+    background-image: url(https://lh3.googleusercontent.com/-G010N8iS3kM/UAGpMOe1kbI/AAAAAAAABD8/ZBDoeFQV1PE/s900/slide-1.jpeg);
+}
+
+#s2 {
+    background-image: url(https://lh6.googleusercontent.com/-KOW-9jXpRJs/UAGpM_vlhdI/AAAAAAAABD8/MZvYcMEzdtA/s900/slide-21.jpeg);
+}
+
+#s3 {
+    background-image: url(https://lh6.googleusercontent.com/-Xyc-ERpn1vk/UAGpNHK4YJI/AAAAAAAABD8/0cmDvfIFWNU/s900/slide-3.jpeg);
+}
+
+#s4 {
+    background-image: url(https://lh6.googleusercontent.com/-o1zeOclXgro/UAGpNtCKZvI/AAAAAAAABD8/xNZnrWD8uRM/s900/slide-4.jpeg);
+}
+
+#slideshow-nav {
+    margin: 1em 0;
+    text-align: center;
+}
+
+#slideshow-nav a {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5;
+    border: 1px solid silver;
+    color: #333;
+    text-decoration: none;
+    margin-right: 0.5em;
+}
+
+#slideshow-nav a.active {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
