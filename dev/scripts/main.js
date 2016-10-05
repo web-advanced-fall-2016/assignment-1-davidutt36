@@ -1,40 +1,33 @@
-var Slider = function() { this.initialize.apply(this, arguments) }
-var group = document.getElementsByClassName('slider-content');
-var item = document.getElementsByClassName('slide');
+var slides = document.querySelectorAll('#slider-frame .slide');
+var currentSlide = 0;
+//var slideInterval = setInterval(nextSlide,1000);
+var next = document.getElementById('next');
+var previous = document.getElementById('prev');
 
+// function nextSlide(){
+// 	slides[currentSlide].className = 'slide';
+// 	currentSlide = (currentSlide+1)%slides.length;
+// 	slides[currentSlide].className = 'slide showing';
+// };
 
-	Slider.prototype = {
+function goToSlide(n){
+    slides[currentSlide].className = 'slide';
+    currentSlide = (n+slides.length)%slides.length;
+    slides[currentSlide].className = 'slide showing';
+};
 
-    initialize: function(slider) {
-      this.group = slider.children[0]
-      this.item = this.group.children
+function newSlide(){
+	goToSlide(currentSlide+1)
+};
 
-      // make <group> as large as all <li>’s
-      this.group.style.width = (this.item[0].clientWidth * this.item.length) + 'px'
+function oldSlide(){
+	goToSlide(currentSlide-1);
+};
 
-      this.currentIndex = 0
-    },
+next.onclick = function(){
+	newSlide();
+}
 
-    goTo: function(index) {
-      // filter invalid indices
-      if (index < 0 || index > this.item.length - 1)
-        return
-
-      // move <group> left
-      this.group.style.left = '-' + (100 * index) + '%'
-
-      this.currentIndex = index
-    },
-
-    goToPrev: function() {
-      this.goTo(this.currentIndex - 1)
-    },
-
-    goToNext: function() {
-      this.goTo(this.currentIndex + 1)
-    }
-  }
-
-console.log(item);
-console.log(item.length);
-console.log(group);
+prev.onclick = function(){
+	oldSlide();
+}

@@ -7,25 +7,17 @@
 	</head>
 
 	<body>
-		<div class="slider" style="width:100vh; height:auto;">
-
-			<div class="slider-frame">
+		<div class="slider">
+			<ul id="slider-frame">
 				<div class="slider-content">
-					<img class="slide" src="img/1.png">
-					<img class="slide" src="img/2.png">
-					<img class="slide" src="img/3.png">
+					<li class="slide">Slide 1</li>
+					<li class="slide">Slide 2</li>
+					<li class="slide">Slide 3</li>
 				</div>
-			</div>
-
+			</ul>
 			<div class="slider-controls">
-				<ul>
-					<li id="prev">
-						Go to Previous
-					</li>
-					<li id="next">
-						Go to Next
-					</li>
-				</ul>
+				<button class="control" id="next">Previous</button>
+				<button class="control" id="prev">Next</button>
 			</div>
 		</div>
 	<script type="text/javascript" src="scripts/main.js"></script>
