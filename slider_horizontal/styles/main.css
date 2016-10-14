@@ -1,58 +1,56 @@
-#slideshow {
-    margin: 2em auto;
-    width: 70%;
-    max-width: 40em;
-    overflow: hidden;
+body{
+  background-color: grey;
 }
 
-#slideshow-wrapper {
-    width: 1600em;
-    height: 15em;
-    position: relative;
+.window-container{
+  position: relative;
+  z-index: 0;
+  max-width: 100vw;
+  max-height: 100vh;
+  margin: 0 auto;
 }
 
-div.slide {
-    width: 40em;
-    height: 15em;
-    float: left;
-    background-repeat: no-repeat;
-    background-size: contain;
+.slideshow-container{
 }
 
-#s1 {
-    background-image: url(https://lh3.googleusercontent.com/-G010N8iS3kM/UAGpMOe1kbI/AAAAAAAABD8/ZBDoeFQV1PE/s900/slide-1.jpeg);
+.slide{
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    max-height:100vh;
+    opacity:0;
+    transition: opacity .6s ease-in-out;
 }
 
-#s2 {
-    background-image: url(https://lh6.googleusercontent.com/-KOW-9jXpRJs/UAGpM_vlhdI/AAAAAAAABD8/MZvYcMEzdtA/s900/slide-21.jpeg);
+.slide.fade {
+    opacity: 1;
 }
 
-#s3 {
-    background-image: url(https://lh6.googleusercontent.com/-Xyc-ERpn1vk/UAGpNHK4YJI/AAAAAAAABD8/0cmDvfIFWNU/s900/slide-3.jpeg);
+#slideshow-nav{
+  position: absolute;
+  margin: 20px auto;
+  width: 100vw;
+  top: 85vh;
+  color: #f8f8f8;
+  text-align: center;
+  font-size: 24px;
 }
 
-#s4 {
-    background-image: url(https://lh6.googleusercontent.com/-o1zeOclXgro/UAGpNtCKZvI/AAAAAAAABD8/xNZnrWD8uRM/s900/slide-4.jpeg);
-}
 
-#slideshow-nav {
-    margin: 1em 0;
-    text-align: center;
-}
-
-#slideshow-nav a {
+.button {
     display: inline-block;
-    width: 1.5em;
-    height: 1.5em;
-    line-height: 1.5;
-    border: 1px solid silver;
-    color: #333;
-    text-decoration: none;
-    margin-right: 0.5em;
+    height: 12px;
+    width: 12px;
+    border: 1px solid #EEEEEE;
+    border-radius: 40%;
+    color: #EEEEEE;
+    transition: background-color .3s, color .15s, opacity 0.3s;
 }
 
-#slideshow-nav a.active {
-    background: #000;
-    color: #fff;
-    border-color: #000;
+.button:hover {
+    background-color: #EEEEEE;
+}
+
+.button-filled {
+    background-color: #EEEEEE;
 }

@@ -1,26 +1,38 @@
-var Slideshow = {
+let slideIndex = 1;
+showSlide(slideIndex);
 
-    navigate: function() {
-        $('a', '#slideshow-nav').click(function(e) {
-            e.preventDefault();
-            var $a = $(this);
-            var slide = $($a.attr('href'));
-            var wrapper = $('#slideshow-wrapper');
+function switchSlide(n) {
+  showSlide(slideIndex += n);
+}
 
-            wrapper.animate({
-                left: -slide.position().left
-            }, 1000, 'linear', function() {
-                $a.addClass('active').siblings().removeClass('active');
-            });
+function currentSlide(n) {
+  showSlide(slideIndex = n);
+}
 
-        });
-    },
+function showSlide(n) {
+    let i;
+    let slidesArray = document.getElementsByClassName("slide");
+    let buttons = document.getElementsByClassName("button");
 
-    init: function() {
-        this.navigate();
+    if (n > slidesArray.length) {
+        slideIndex = 1
     }
 
-};
+    if (n < 1) {
+        slideIndex = slidesArray.length
+    } ;
 
+    for (i = 0; i < slidesArray.length; i++) {
+       slidesArray[i].className = slidesArray[i].className.replace(" fade", "");
+    }
 
-Slideshow.init();
+    for (i = 0; i < buttons.length; i++) {
+       buttons[i].className = buttons[i].className.replace(" button-filled", "");
+    }
+    slidesArray[slideIndex-1].className += " fade";
+    buttons[slideIndex-1].className += " button-filled";
+}
+
+window.setInterval(function(){
+    switchSlide(1)
+}, 4000);
